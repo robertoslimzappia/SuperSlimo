@@ -14,6 +14,7 @@
 			"script": "dev-serve",
 			"label": "npm: dev-serve",
 			"detail": "webpack serve --mode=development",
+			"isBackground": true,
 			"problemMatcher": {
 				"owner": "tsc",
 				"severity": "error",
@@ -39,6 +40,14 @@
 			"command": "echo ${input:terminate}",
 			"type": "shell",
 			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "terminateAll"
 		}
 	]
 }
