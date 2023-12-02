@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev-build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: dev-build",
+			"detail": "webpack build --mode=development"
+		},
+		{
+			"type": "npm",
+			"script": "dev-serve",
+			"label": "npm: dev-serve",
+			"detail": "webpack serve --mode=development",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "tsc",
+				"severity": "error",
+				"fileLocation": "absolute",
+				"pattern": [
+					{
+						"regexp": "ERROR in (.*)\\((\\d+),(\\d+)\\)",
+						"file": 1,
+						"line": 2,
+						"column": 3,
+						"message": 0
+					}
+				],
+				"background": {
+					"activeOnStart": false,
+					"beginsPattern": ".*",
+					"endsPattern": "webpack.* \\d+ ms"
+				}
+			}
+		},
+		{
+			"label": "Terminate All Tasks",
+			"command": "echo ${input:terminate}",
+			"type": "shell",
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "terminateAll"
+		}
+	]
+}
