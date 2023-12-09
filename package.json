@@ -8,7 +8,7 @@
     "dev-serve": "webpack serve --mode=development"
   },
   "author": "slimo&DarkHarlock81",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
